@@ -1,0 +1,29 @@
+<h1>Listing bios</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Contact no</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bios.each do |bio| %>
+  <tr>
+    <td><%= bio.name %></td>
+    <td><%= bio.contact_no %></td>
+    <td><%= bio.email %></td>
+    <td><%= bio.password %></td>
+    <td><%= link_to 'Show', bio %></td>
+    <td><%= link_to 'Edit', edit_bio_path(bio) %></td>
+    <td><%= link_to 'Destroy', bio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bio', new_bio_path %>
